@@ -83,30 +83,30 @@ export default function Background() {
               {modules.map((m, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 bg-white shadow-sm p-4 border-l-4 border-[#002148] group hover:shadow-md transition-shadow duration-200"
+                  className="flex items-center gap-4 bg-white shadow-sm p-4 border-l-4 group hover:shadow-md transition-shadow duration-200"
                   style={{ borderColor: i === 1 ? "#C9970C" : "#002148" }}
                 >
                   <div
-                    className={`${m.color} w-10 h-10 flex items-center justify-center flex-shrink-0 text-white`}
+                    className={`${m.color} w-10 h-10 flex-shrink-0 flex items-center justify-center text-white`}
                   >
                     {m.icon}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="font-black text-[#002148] text-sm">
+                    <div className="font-black text-[#002148] text-sm mb-0.5">
                       {m.name}
                     </div>
-                    <div className="text-gray-400 text-xs mt-0.5">{m.desc}</div>
+                    <div className="text-gray-400 text-xs leading-relaxed">
+                      {m.desc}
+                    </div>
                   </div>
-                  <div className="ml-auto">
-                    <svg
-                      className="w-4 h-4 text-gray-300 group-hover:text-[#C9970C] transition-colors"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                  <svg
+                    className="w-4 h-4 flex-shrink-0 text-gray-300 group-hover:text-[#C9970C] transition-colors"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               ))}
             </div>
@@ -121,11 +121,14 @@ export default function Background() {
             {/* ── Capabilities — numbered ── */}
             <div className="divide-y divide-gray-100">
               {capabilities.map((item, i) => (
-                <div key={i} className="flex items-start gap-4 py-4">
-                  <span className="text-[#C9970C] font-black text-sm leading-none pt-0.5 min-w-[24px] flex-shrink-0">
+                <div
+                  key={i}
+                  className="flex items-start gap-4 py-4"
+                >
+                  <span className="text-[#C9970C] font-black text-sm leading-none pt-0.5 min-w-[28px] flex-shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-gray-600 text-sm leading-relaxed flex-1 min-w-0">
+                  <span className="text-gray-600 text-sm leading-relaxed min-w-0 flex-1">
                     {item}
                   </span>
                 </div>
@@ -175,22 +178,22 @@ export default function Background() {
             </div>
 
             {/* ── Stat block below images ── */}
-            <div className="flex gap-0 mt-3">
-              <div className="bg-[#002148] text-white px-8 py-5 flex-1 text-center">
+            <div className="grid grid-cols-3 mt-3">
+              <div className="bg-[#002148] text-white px-4 py-5 text-center">
                 <div className="text-3xl font-black leading-none">3</div>
-                <div className="text-white/60 text-xs uppercase tracking-wider mt-1 font-semibold">
+                <div className="text-white/60 text-[10px] uppercase tracking-wider mt-1 font-semibold">
                   Core Modules
                 </div>
               </div>
-              <div className="bg-[#C9970C] text-white px-8 py-5 flex-1 text-center">
+              <div className="bg-[#C9970C] text-white px-4 py-5 text-center">
                 <div className="text-3xl font-black leading-none">1</div>
-                <div className="text-white/60 text-xs uppercase tracking-wider mt-1 font-semibold">
+                <div className="text-white/60 text-[10px] uppercase tracking-wider mt-1 font-semibold">
                   Unified Platform
                 </div>
               </div>
-              <div className="bg-white text-[#002148] px-8 py-5 flex-1 text-center shadow-lg">
+              <div className="bg-white text-[#002148] px-4 py-5 text-center shadow-lg">
                 <div className="text-3xl font-black leading-none">∞</div>
-                <div className="text-gray-400 text-xs uppercase tracking-wider mt-1 font-semibold">
+                <div className="text-gray-400 text-[10px] uppercase tracking-wider mt-1 font-semibold">
                   Scalable Impact
                 </div>
               </div>
