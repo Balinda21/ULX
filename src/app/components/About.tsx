@@ -17,8 +17,8 @@ export default function About() {
             {/* Main image */}
             <div className="relative h-[540px] overflow-hidden shadow-2xl">
               <Image
-                src="/images/1.jpeg"
-                alt="ULX team member using the Berulo App"
+                src="/images/hero-children.png"
+                alt="Children celebrating together in Rwanda"
                 fill
                 className="object-cover"
               />
@@ -49,7 +49,7 @@ export default function About() {
 
             {/* Founded badge — crimson, sharp */}
             <div className="absolute top-0 left-0 bg-[#C9970C] text-white px-6 py-4 shadow-xl z-10">
-              <div className="text-2xl font-black leading-none">2014</div>
+              <div className="text-2xl font-black leading-none">2023</div>
               <div className="text-white/70 text-xs font-semibold uppercase tracking-wider mt-1">
                 Founded
               </div>

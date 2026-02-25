@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, FormEvent } from "react";
 import Image from "next/image";
 
 const contactItems = [
@@ -45,6 +48,15 @@ const socials = [
 ];
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "success">("idle");
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    form.reset();
+    setStatus("success");
+  }
+
   return (
     <section id="contact" className="bg-white overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 2xl:px-20">
@@ -145,7 +157,7 @@ export default function Contact() {
             </div>
 
             {/* Form */}
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-black text-[#002148] uppercase tracking-widest mb-2">
@@ -227,6 +239,39 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      {status === "success" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white max-w-sm w-full mx-4 rounded-2xl shadow-2xl p-6 relative">
+            <button
+              type="button"
+              onClick={() => setStatus("idle")}
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <div className="mb-4">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#C9970C]/10 text-[#C9970C]">
+                ✓
+              </span>
+            </div>
+            <h3 className="text-lg font-black text-[#002148] mb-1">
+              Message sent successfully
+            </h3>
+            <p className="text-sm text-gray-500 mb-4">
+              Thank you for reaching out. The ULX team will review your message and get back to you as soon as possible.
+            </p>
+            <button
+              type="button"
+              onClick={() => setStatus("idle")}
+              className="w-full bg-[#002148] text-white font-bold py-2.5 text-xs uppercase tracking-widest hover:bg-[#C9970C] transition-colors duration-300"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

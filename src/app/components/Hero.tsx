@@ -8,22 +8,18 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* ── VIDEO ── */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source
-          src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4"
-          type="video/mp4"
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-children.png"
+          alt="Children celebrating together in Rwanda"
+          fill
+          priority
+          className="object-cover"
         />
-      </video>
-
-      {/* Overlay — deep navy, lighter on the right so video breathes */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#001a3a]/90 via-[#002148]/75 to-[#002148]/50" />
+        {/* Overlay — deep navy, lighter on the right so image breathes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001a3a]/90 via-[#002148]/75 to-[#002148]/50" />
+      </div>
 
       {/* ── MAIN LAYOUT ── */}
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-8 lg:px-16 pt-24 pb-16">

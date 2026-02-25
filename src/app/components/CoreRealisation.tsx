@@ -59,8 +59,8 @@ export default function CoreRealisation() {
             >
               {/* Number */}
               <div
-                className={`text-[5rem] font-black leading-none mb-6 select-none ${
-                  i === 1 ? "text-white/10" : "text-gray-100"
+                className={`text-[3.5rem] md:text-[5rem] font-black leading-none mb-6 select-none ${
+                  i === 1 ? "text-white/25" : "text-gray-200"
                 }`}
               >
                 {r.num}
