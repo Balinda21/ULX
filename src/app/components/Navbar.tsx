@@ -24,8 +24,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="grid grid-cols-3 items-center h-20">
+          {/* Logo — left */}
           <a href="#home" className="flex items-center gap-2.5 group">
             <ULXMark />
             <span
@@ -37,8 +37,8 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Nav links — center */}
+          <div className="hidden md:flex items-center justify-center gap-8">
             {navLinks.map((item) => (
               <a
                 key={item}
@@ -48,6 +48,10 @@ export default function Navbar() {
                 {item}
               </a>
             ))}
+          </div>
+
+          {/* CTA — right */}
+          <div className="hidden md:flex items-center justify-end">
             <a
               href="#contact"
               className="bg-[#C9970C] text-white text-sm font-bold px-6 py-2.5 rounded-full hover:bg-[#002148] transition-colors duration-200 shadow-sm"
