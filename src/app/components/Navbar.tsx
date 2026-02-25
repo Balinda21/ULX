@@ -63,7 +63,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`md:hidden w-8 h-8 flex flex-col justify-center gap-1.5 ${linkClass}`}
+            className={`md:hidden justify-self-end col-start-3 w-8 h-8 flex flex-col justify-center gap-1.5 ${linkClass}`}
             aria-label="Toggle menu"
           >
             <span
